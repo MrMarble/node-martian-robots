@@ -10,5 +10,11 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["@typescript-eslint"],
-  rules: {},
+  rules: {
+    "dot-notation": "off",
+
+    // Fix for `no-unused-vars` triggering with typescript
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+  },
 };
