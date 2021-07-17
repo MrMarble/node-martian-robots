@@ -1,5 +1,5 @@
 import { Robot } from "./Robot";
-import { Movement, Orientation } from "./types";
+import { isMovement, Movement, Orientation } from "./types";
 
 export class Expedition {
   private width: number;
@@ -16,10 +16,52 @@ export class Expedition {
     return x >= 0 && x < this.width && y >= 0 && y < this.height;
   }
 
-  addRobot(x: number, y: number, orientation: Orientation, movements: Array<Movement>): Expedition {
-    this.robots.push([new Robot([x, y], orientation), movements]);
+  private parseMovements(movements: string): Array<Movement> {
+    const _movements: Array<Movement> = [];
+    movements.split("").forEach((movement: string) => {
+      if (isMovement(movement)) {
+        _movements.push(movement);
+      }
+    });
+    return _movements;
+  }
+
+  /**
+   * Add a robot to the expedition
+   * @param movements Movements the robot can make
+   * @param robot Robot to add
+   */
+  addRobot(movements: Array<Movement> | string, robot: Robot): Expedition;
+  /**
+   * @param movements Movements the robot can make
+   * @param x X position of the robot
+   * @param y Y position of the robot
+   * @param orientation Initial orientation of the robot
+   */
+  addRobot(movements: Array<Movement> | string, x: number, y: number, orientation: Orientation): Expedition;
+  addRobot(movements: any, xOrRobot: any, y?: number, orientation?: Orientation): Expedition {
+    let _movements: Array<Movement> = [];
+    let _robot: Robot = new Robot();
+
+    if (xOrRobot instanceof Robot) {
+      _robot = xOrRobot;
+    } else if (y !== undefined && orientation !== undefined) {
+      _robot = new Robot([xOrRobot, y], orientation);
+    }
+
+    if (typeof movements === "string") {
+      _movements = this.parseMovements(movements);
+    } else {
+      _movements = movements;
+    }
+
+    this.robots.push([_robot, _movements]);
 
     return this;
+  }
+
+  getRobots(): Array<[Robot, Array<Movement>]> {
+    return this.robots;
   }
 
   processMovements(): string[] {
