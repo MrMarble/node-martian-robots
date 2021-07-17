@@ -1,13 +1,19 @@
 import { Orientation, OrientationEnum } from "./types";
 
 export class Robot {
-  private position: [number, number];
-  private orientation: OrientationEnum;
+  private position: [number, number] = [0, 0];
+  private orientation: OrientationEnum = OrientationEnum.N;
   private lost = false;
 
-  constructor(position: [number, number], orientation: Orientation) {
-    this.position = position;
-    this.orientation = OrientationEnum[orientation];
+  constructor();
+  constructor(position: [number, number], orientation: Orientation);
+  constructor(position?: [number, number], orientation?: Orientation) {
+    if (position) {
+      this.position = position;
+    }
+    if (orientation) {
+      this.orientation = OrientationEnum[orientation];
+    }
   }
 
   toString(): string {
@@ -59,6 +65,16 @@ export class Robot {
 
   public getPosition(): [number, number] {
     return this.position;
+  }
+
+  public setPosition(position: [number, number]): Robot {
+    this.position = position;
+    return this;
+  }
+
+  public setOrientation(orientation: Orientation): Robot {
+    this.orientation = OrientationEnum[orientation];
+    return this;
   }
 
   public getOrientation(): string {
