@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "bin": {
-    "mars-challenge": "./bin/cli.js"
+    "mars-robots": "./bin/cli.js"
   },
   "dependencies": {
+    "chalk": "^4.1.1",
     "commander": "^8.0.0",
-    "core": "^1.0.0"
+    "core": "^1.0.0",
+    "inquirer": "^8.1.2"
   }
 }
