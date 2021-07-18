@@ -7,9 +7,9 @@ export class Expedition {
   private robots: Array<[Robot, Array<Movement>]> = [];
   private beacons: Set<String> = new Set();
 
-  constructor(width: number, height: number) {
-    this.width = width + 1;
-    this.height = height + 1;
+  constructor(width: string | number, height: string | number) {
+    this.width = typeof width === "string" ? parseInt(width) : width + 1;
+    this.height = typeof height === "string" ? parseInt(height) : height + 1;
   }
 
   private isInBounds(x: number, y: number): boolean {
