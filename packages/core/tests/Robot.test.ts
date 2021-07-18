@@ -1,5 +1,5 @@
 import { test } from "uvu";
-import { Robot } from "../src/Robot";
+import { Robot, isValidOrientation, isValidMovement } from "../src/Robot";
 import * as assert from "uvu/assert";
 
 test("toString returns position and orientation", () => {
@@ -32,4 +32,31 @@ test("going west decreases 'x' by 1", () => {
   assert.is(robot.getPosition()[0], 0);
 });
 
+test("isValidOrientation", () => {
+  const cases: Array<[string, boolean]> = [
+    ["N", true],
+    ["S", true],
+    ["E", true],
+    ["W", true],
+    ["NE", false],
+  ];
+
+  cases.forEach(([orientation, expected]) => {
+    assert.is(isValidOrientation(orientation), expected, orientation);
+  });
+});
+
+test("isValidMovement", () => {
+  const cases: Array<[string, boolean]> = [
+    ["F", true],
+    ["R", true],
+    ["L", true],
+    ["FRL", true],
+    ["FFRRLL", true],
+    ["FFRRLLN", false],
+  ];
+  cases.forEach(([movement, expected]) => {
+    assert.is(isValidMovement(movement), expected, movement);
+  });
+});
 test.run();

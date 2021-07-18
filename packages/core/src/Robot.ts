@@ -1,5 +1,8 @@
 import { Orientation, OrientationEnum } from "./types";
 
+export const isValidOrientation = (orientation: string) => /^[NSEW]$/.test(orientation);
+export const isValidMovement = (movement: string) => /^[FRL]+$/.test(movement);
+
 export class Robot {
   private position: [number, number] = [0, 0];
   private orientation: OrientationEnum = OrientationEnum.N;
