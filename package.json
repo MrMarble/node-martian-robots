@@ -31,5 +31,8 @@
     "lint": "eslint --cache --fix",
     "format": "prettier --write packages",
     "test": "yarn workspaces run test"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.16.0"
   }
 }
