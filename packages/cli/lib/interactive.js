@@ -70,6 +70,7 @@ const interactive = async () => {
 
   const exp = new Expedition(width, height);
   robots.forEach(({ movements, x, y, orientation }) => exp.addRobot(movements, x, y, orientation));
+  console.log("Output:");
   console.log(exp.processMovements().join("\n"));
 };
 
