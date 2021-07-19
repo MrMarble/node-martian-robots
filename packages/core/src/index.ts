@@ -1,2 +1,2 @@
-export * from "./expedition";
-export * from "./robot";
+export * from "./Expedition";
+export * from "./Robot";
