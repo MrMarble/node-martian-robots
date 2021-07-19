@@ -1,6 +1,6 @@
 import { existsSync, createReadStream } from "fs";
 import { createInterface } from "readline";
-import { isValidOrientation, isValidMovement } from "core";
+import { isValidOrientation, isValidMovement } from "@mrmarble/martian-robots-core";
 import { error } from "./error";
 /**
  * Reads a file and returns the content as a array

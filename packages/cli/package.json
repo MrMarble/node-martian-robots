@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "@mrmarble/martian-robots-cli",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "git+https://github.com/mrmarble/node-martian-robots.git",
     "directory": "packages/cli"
   },
-  "main": "dist/cli.cjs.js",
+  "main": "dist/mrmarble-martian-robots-cli.cjs.js",
   "bin": {
     "mars-robots": "bin.js"
   },
@@ -17,7 +17,7 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^8.0.0",
-    "core": "^1.0.0",
+    "@mrmarble/martian-robots-core": "^1.0.0",
     "inquirer": "^8.1.2"
   },
   "devDependencies": {

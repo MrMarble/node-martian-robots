@@ -1,6 +1,5 @@
 import { green } from "chalk";
-import { isValidMovement } from "core";
-import { Expedition } from "core/dist/Expedition";
+import { isValidMovement, Expedition } from "@mrmarble/martian-robots-core";
 import { prompt } from "inquirer";
 
 const logo = () => {

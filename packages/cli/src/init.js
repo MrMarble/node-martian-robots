@@ -1,5 +1,5 @@
 import { parseInputFile } from "./parseInput";
-import { Expedition } from "core";
+import { Expedition } from "@mrmarble/martian-robots-core";
 import { writeFile } from "fs/promises";
 import { error } from "./error";
 import { interactive } from "./interactive";
