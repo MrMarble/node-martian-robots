@@ -1,7 +1,7 @@
-const chalk = require("chalk");
-const { isValidMovement } = require("core");
-const { Expedition } = require("core/dist/Expedition");
-const inquirer = require("inquirer");
+import { green } from "chalk";
+import { isValidMovement } from "core";
+import { Expedition } from "core/dist/Expedition";
+import { prompt } from "inquirer";
 
 const logo = () => {
   const spaceShip =
@@ -10,11 +10,11 @@ const logo = () => {
   for (let i = 0; i < spaceShip.length; i += 2) {
     ascii.push(String.fromCharCode(parseInt(spaceShip.substr(i, 2), 16)));
   }
-  console.log(chalk.green(ascii.join("")));
+  console.log(green(ascii.join("")));
 };
 
 const collectAnswers = async (inputs = []) => {
-  const { again, ...answers } = await inquirer.prompt([
+  const { again, ...answers } = await prompt([
     {
       type: "number",
       message: "Robot X coordinate",
@@ -51,10 +51,10 @@ const collectAnswers = async (inputs = []) => {
   return again ? collectAnswers(newRobots) : newRobots;
 };
 
-const interactive = async () => {
+export const interactive = async () => {
   logo();
 
-  const { width, height } = await inquirer.prompt([
+  const { width, height } = await prompt([
     {
       type: "number",
       message: "Sector width?",
@@ -73,5 +73,3 @@ const interactive = async () => {
   console.log("Output:");
   console.log(exp.processMovements().join("\n"));
 };
-
-module.exports = { interactive };

@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-
-const { Command } = require("commander");
-const { version } = require("../lib/version");
-const { init } = require("../lib/init");
-const { error } = require("../lib/error");
+import { Command } from "commander";
+import { version } from "./version";
+import { init } from "./init";
+import { error } from "./error";
 
 const cli = new Command(`Martian Robots`);
 

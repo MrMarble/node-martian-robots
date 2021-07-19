@@ -1,20 +1,20 @@
-const fs = require("fs");
-const readline = require("readline");
-const { isValidOrientation, isValidMovement } = require("core");
-const { error } = require("./error");
+import { existsSync, createReadStream } from "fs";
+import { createInterface } from "readline";
+import { isValidOrientation, isValidMovement } from "core";
+import { error } from "./error";
 /**
  * Reads a file and returns the content as a array
  *
  * @param {string} path
  * @returns {Promise<string[][]>}
  */
-const parseInputFile = async (path) => {
-  if (!fs.existsSync(path)) {
+export const parseInputFile = async (path) => {
+  if (!existsSync(path)) {
     error(`File ${path} does not exist`);
   }
 
-  const rl = readline.createInterface({
-    input: fs.createReadStream(path),
+  const rl = createInterface({
+    input: createReadStream(path),
     output: process.stdout,
     terminal: false,
   });
@@ -50,8 +50,4 @@ const parseInputFile = async (path) => {
       resolve(data);
     });
   });
-};
-
-module.exports = {
-  parseInputFile,
 };

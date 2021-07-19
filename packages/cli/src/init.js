@@ -1,10 +1,10 @@
-const { parseInputFile } = require("./parseInput");
-const { Expedition } = require("core");
-const { writeFile } = require("fs/promises");
-const { error } = require("./error");
-const { interactive } = require("./interactive");
+import { parseInputFile } from "./parseInput";
+import { Expedition } from "core";
+import { writeFile } from "fs/promises";
+import { error } from "./error";
+import { interactive } from "./interactive";
 
-const init = async (options) => {
+export const init = async (options) => {
   if (options.interactive) {
     await interactive();
     return;
@@ -30,8 +30,4 @@ const init = async (options) => {
   } else {
     console.log(output);
   }
-};
-
-module.exports = {
-  init,
 };

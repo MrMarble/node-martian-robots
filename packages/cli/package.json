@@ -7,8 +7,9 @@
     "url": "git+https://github.com/mrmarble/node-martian-robots.git",
     "directory": "packages/cli"
   },
+  "main": "dist/cli.cjs.js",
   "bin": {
-    "mars-robots": "./bin/cli.js"
+    "mars-robots": "bin.js"
   },
   "scripts": {
     "test": "uvu tests"
