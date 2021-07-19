@@ -4,10 +4,12 @@ This package is a command line interface for [Core](packages/core).
 
 ## Installation
 
-### Locally
+### Directly
 
-```
+```bash
 yarn global add mrmarble/node-martian-robots
+# OR
+npm i -g @mrmarble/node-martian-robots
 ```
 
 ### Docker
@@ -26,6 +28,7 @@ docker run -it -v "$pwd\fixtures:/fixtures" mrmarble/martian-robots-cli -s fixtu
 ## Usage
 
 ```bash
+$ mars-robots -h
 Usage: Martian Robots [options]
 
 Options:
