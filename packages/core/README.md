@@ -14,16 +14,16 @@ If a robot leaves the sector, it will leave a beacon before losing the signal, t
 
 ## Installation
 
-You can install this package directly from github with
+You can install this package to use in your scripts with
 
 ```
-yarn add mrmarble/node-martian-robots#workspace=core
+yarn add mrmarble/node-martian-robots-core
 ```
 
 ## Usage
 
 ```javascript
-import { Expedition } from "core";
+import { Expedition } from "@mrmarble/martian-robots-core";
 
 // Create new expedition with width and height
 const exp = new Expedition(5, 3);
