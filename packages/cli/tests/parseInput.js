@@ -1,6 +1,6 @@
 const { test } = require("uvu");
 const assert = require("uvu/assert");
-const { parseInputFile } = require("../lib/parseInput");
+const { parseInputFile } = require("../src/parseInput");
 
 test(`parseInput`, async (t) => {
   assert.equal(await parseInputFile("tests/fixtures/input.txt"), [
