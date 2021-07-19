@@ -14,8 +14,31 @@ If a robot leaves the sector, it will leave a beacon before losing the signal, t
 
 ## Installation
 
-TODO
+You can install this package directly from github with
+
+```
+yarn add mrmarble/node-martian-robots#workspace=core
+```
 
 ## Usage
 
-TODO
+```javascript
+import { Expedition } from "core";
+
+// Create new expedition with width and height
+const exp = new Expedition(5, 3);
+
+// Add a robot to the expedition
+exp
+  .addRobot(["F", "R", "L"], 1, 1, "E") // Chaining supported
+  .addRobot("FFRLFLL", 1, 2, "S")
+  .addRobot("FFRLFLL", new Robot(3, 2, "W"));
+
+const result = exp.processMovements(); // Calculate all robot positions
+
+console.log(result.join("\n")); // Print the output => 2 1 E ...
+```
+
+## Testing
+
+I have chosen `uvu` for testing because it's fast and with a small footprint, giving the low complexity of the problem and size of code I think it makes more sense than a bigger one like `jest`. _494kb vs 24.9Mb_
