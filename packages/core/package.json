@@ -4,6 +4,11 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrmarble/node-martian-robots.git",
+    "directory": "packages/core"
+  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "uvu -r ts-node/register tests",
