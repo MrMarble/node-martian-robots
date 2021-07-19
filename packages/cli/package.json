@@ -2,9 +2,12 @@
   "name": "@mrmarble/martian-robots-cli",
   "version": "1.0.0",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrmarble/node-martian-robots.git",
+    "url": "ssh://git@github.com/mrmarble/node-martian-robots.git",
     "directory": "packages/cli"
   },
   "main": "dist/mrmarble-martian-robots-cli.cjs.js",

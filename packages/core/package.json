@@ -5,9 +5,12 @@
   "main": "dist/mrmarble-martian-robots-core.cjs.js",
   "module": "dist/mrmarble-martian-robots-core.esm.js",
   "types": "dist/core.cjs.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrmarble/node-martian-robots.git",
+    "url": "ssh://git@github.com/mrmarble/node-martian-robots.git",
     "directory": "packages/core"
   },
   "scripts": {
