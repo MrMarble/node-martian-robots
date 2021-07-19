@@ -30,6 +30,7 @@
     "postinstall": "husky install && preconstruct dev",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
+    "build": "preconstruct build",
     "release": "preconstruct build && changeset publish",
     "lint": "eslint --cache --fix",
     "format": "prettier --write packages",

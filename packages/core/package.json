@@ -1,9 +1,9 @@
 {
-  "name": "core",
+  "name": "@mrmarble/martian-robots-core",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "dist/core.cjs.js",
-  "module": "dist/core.esm.js",
+  "main": "dist/mrmarble-martian-robots-core.cjs.js",
+  "module": "dist/mrmarble-martian-robots-core.esm.js",
   "types": "dist/core.cjs.d.ts",
   "repository": {
     "type": "git",
