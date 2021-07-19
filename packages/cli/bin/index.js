@@ -3,11 +3,11 @@
 const { Command } = require("commander");
 const { version } = require("../lib/version");
 const { init } = require("../lib/init");
-const chalk = require("chalk");
+const { error } = require("../lib/error");
 
 const cli = new Command(`Martian Robots`);
 
-(async () => {
+const main = async () => {
   try {
     cli
       .usage("[options]")
@@ -18,7 +18,9 @@ const cli = new Command(`Martian Robots`);
       .action(init);
 
     await cli.parseAsync(process.argv);
-  } catch (error) {
-    console.error(`${chalk.red("Error:")} ${error.message}`);
+  } catch (e) {
+    error(e.message);
   }
-})();
+};
+
+main();

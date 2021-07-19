@@ -1,6 +1,7 @@
 const fs = require("fs");
 const readline = require("readline");
 const { isValidOrientation, isValidMovement } = require("core");
+const { error } = require("./error");
 /**
  * Reads a file and returns the content as a array
  *
@@ -9,7 +10,7 @@ const { isValidOrientation, isValidMovement } = require("core");
  */
 const parseInputFile = async (path) => {
   if (!fs.existsSync(path)) {
-    throw new Error(`File ${path} does not exist`);
+    error(`File ${path} does not exist`);
   }
 
   const rl = readline.createInterface({
@@ -30,14 +31,14 @@ const parseInputFile = async (path) => {
         // Odd lines are the coordinates of the robot
         const [x, y, orientation] = line.split(" ");
         if (isNaN(x) || isNaN(y) || !isValidOrientation(orientation)) {
-          throw new Error(`Line ${lineNumber + 1} is invalid: ${line}`);
+          reject(error(`Line ${lineNumber + 1} is invalid: ${line}`));
         }
         data.push([[x, y, orientation]]);
         robots++;
       } else {
         // Even lines are the robot movements
         if (!isValidMovement(line)) {
-          throw new Error(`Line ${lineNumber + 1} is invalid: ${line}`);
+          reject(error(`Line ${lineNumber + 1} is invalid: ${line}`));
         }
         data[robots].push(line.split(""));
       }
