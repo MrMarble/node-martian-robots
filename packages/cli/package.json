@@ -5,6 +5,9 @@
   "bin": {
     "mars-robots": "./bin/cli.js"
   },
+  "scripts": {
+    "test": "uvu tests"
+  },
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^8.0.0",
