@@ -12,12 +12,17 @@
     "mars-robots": "bin.js"
   },
   "scripts": {
-    "test": "uvu tests"
+    "test": "uvu  -r esm -r ts-node/register tests"
   },
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^8.0.0",
     "core": "^1.0.0",
     "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "ts-node": "^10.1.0",
+    "uvu": "^0.5.1"
   }
 }
