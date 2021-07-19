@@ -1,9 +1,11 @@
 {
+  "name": "martian-robots",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
+    "@preconstruct/cli": "^2.1.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -25,14 +27,22 @@
     }
   },
   "scripts": {
-    "postinstall": "husky install",
+    "postinstall": "husky install && preconstruct dev",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
+    "release": "preconstruct build && changeset publish",
     "lint": "eslint --cache --fix",
     "format": "prettier --write packages",
     "test": "yarn workspaces run test"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
     "@changesets/cli": "^2.16.0"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
   }
 }
