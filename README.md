@@ -1,4 +1,5 @@
 # Martian Robots code challenge
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MrMarble_node-martian-robots&metric=alert_status)](https://sonarcloud.io/dashboard?id=MrMarble_node-martian-robots)
 
 This monorepo contains the different parts of the challenge:
 
