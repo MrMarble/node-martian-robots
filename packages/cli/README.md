@@ -1,4 +1,6 @@
 # Martian Robots CLI
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/mrmarble/martian-robots-cli)
+![npm (scoped)](https://img.shields.io/npm/v/@mrmarble/martian-robots-cli)
 
 This package is a command line interface for [Core](packages/core).
 
