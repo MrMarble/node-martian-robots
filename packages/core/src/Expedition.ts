@@ -5,7 +5,7 @@ export class Expedition {
   private width: number;
   private height: number;
   private robots: Array<[Robot, Array<Movement>]> = [];
-  private beacons: Set<String> = new Set();
+  private beacons: Set<string> = new Set();
 
   constructor(width: string | number, height: string | number) {
     this.width = typeof width === "string" ? parseInt(width) : width + 1;
